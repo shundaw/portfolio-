@@ -353,6 +353,96 @@ section {
   overflow: hidden;
 }
 
+/* Ticket Preview */
+.preview-ticket {
+  background: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.preview-ticket::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, transparent 0px, transparent 18px, rgba(200,30,30,0.04) 18px, rgba(200,30,30,0.04) 19px);
+}
+.mock-ticket {
+  display: flex;
+  width: 100%;
+  height: 90px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.06);
+  position: relative;
+  margin-bottom: 8px;
+}
+.mock-ticket-main {
+  flex: 1;
+  background: #111;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  border-left: 3px solid #e8002d;
+}
+.mock-ticket-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 7px;
+  color: #e8002d;
+  letter-spacing: 0.08em;
+}
+.mock-ticket-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+.mock-ticket-cast {
+  font-size: 7.5px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.5;
+}
+.mock-ticket-perf {
+  width: 2px;
+  background: #0a0a0a;
+  border-left: 1px dashed rgba(255,255,255,0.15);
+  border-right: 1px dashed rgba(255,255,255,0.15);
+}
+.mock-ticket-stub {
+  width: 50px;
+  background: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-right: 3px solid #e8002d;
+}
+.mock-stub-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.7);
+  writing-mode: vertical-rl;
+  letter-spacing: 0.04em;
+}
+.mock-stub-no {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  color: rgba(232,0,45,0.6);
+  font-weight: 700;
+}
+.mock-ticket-gold .mock-ticket-main { border-left-color: #c9a227; }
+.mock-ticket-gold .mock-ticket-label { color: #c9a227; }
+.mock-ticket-gold .mock-ticket-stub { border-right-color: #c9a227; }
+.mock-ticket-gold .mock-stub-no { color: rgba(201,162,39,0.7); }
+
 /* SkyAce Preview */
 .preview-skyace {
   background: linear-gradient(135deg, #0D1B45 0%, #1E3A8A 50%, #00AEEF22 100%);
@@ -755,7 +845,7 @@ footer {
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-tag">LP DESIGN &amp; WEB PRODUCTION</div>
+    <div class="hero-tag">LP / チケット / WEB デザイン</div>
     <h1 class="hero-title">
       <span class="line1">伝わる設計で</span>
       <span class="line2">成果を出すLP</span>
@@ -767,7 +857,7 @@ footer {
     <div class="hero-badges">
       <div class="badge"><div class="badge-dot green"></div>HTML/CSS完全コーディング</div>
       <div class="badge"><div class="badge-dot purple"></div>構成〜デザイン〜納品まで一貫対応</div>
-      <div class="badge"><div class="badge-dot pink"></div>製造業・音楽・住宅に強い</div>
+      <div class="badge"><div class="badge-dot pink"></div>チケット・印刷物デザイン対応</div>
     </div>
     <div class="hero-cta">
       <a href="#works" class="btn-primary">実績を見る</a>
@@ -916,6 +1006,48 @@ footer {
           <span class="work-tag">HTML/CSS</span>
           <span class="work-tag">コンテンツ設計</span>
           <span class="work-tag">DTM知識</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WORK 4: チケットデザイン -->
+    <div class="work-card reveal" style="transition-delay:0.3s">
+      <div class="work-preview preview-ticket">
+        <div style="width:100%;display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;">
+          <div class="mock-ticket">
+            <div class="mock-ticket-main">
+              <div class="mock-ticket-label">2026.08.15 SAT — ROCK STAGE IWAKI presents</div>
+              <div class="mock-ticket-title">LAST SUMMER ROCK NIGHT</div>
+              <div class="mock-ticket-cast">THE COLTS / ASTRO BOMBER'S / act on impulse</div>
+            </div>
+            <div class="mock-ticket-perf"></div>
+            <div class="mock-ticket-stub">
+              <div class="mock-stub-title">ROCK NIGHT</div>
+              <div class="mock-stub-no">001</div>
+            </div>
+          </div>
+          <div class="mock-ticket mock-ticket-gold">
+            <div class="mock-ticket-main">
+              <div class="mock-ticket-label">2026.08.15 SAT — PREMIUM</div>
+              <div class="mock-ticket-title">LAST SUMMER ROCK NIGHT</div>
+              <div class="mock-ticket-cast">THE COLTS / ASTRO BOMBER'S / act on impulse</div>
+            </div>
+            <div class="mock-ticket-perf"></div>
+            <div class="mock-ticket-stub">
+              <div class="mock-stub-title">ROCK NIGHT</div>
+              <div class="mock-stub-no">002</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="work-info">
+        <div class="work-category">音楽 / 印刷物デザイン</div>
+        <div class="work-title">ライブチケット デザイン</div>
+        <div class="work-desc">ロックライブ用チケットのHTMLサンプル。もぎり（半券）付きミシン目デザイン・縦書き半券を再現。Standard（レッド）とPremium（ゴールド）の2パターンを制作。</div>
+        <div class="work-tags">
+          <span class="work-tag">印刷物デザイン</span>
+          <span class="work-tag">HTML/CSS</span>
+          <span class="work-tag">音楽・ライブ</span>
         </div>
       </div>
     </div>
